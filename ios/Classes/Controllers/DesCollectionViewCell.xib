@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DesCollectionViewCell" id="gTV-IL-0wX" customClass="DesCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="191"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="265" height="191"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jNz-Sj-LbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="265" height="191"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rgedrger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agO-ay-G7x">
+                        <rect key="frame" x="0.0" y="0.0" width="265" height="191"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="MLingWaiMedium-SC" family="LingWai SC" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="jNz-Sj-LbQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0jN-xo-VeQ"/>
+                <constraint firstAttribute="bottom" secondItem="agO-ay-G7x" secondAttribute="bottom" id="8wL-sT-9sd"/>
+                <constraint firstAttribute="bottom" secondItem="jNz-Sj-LbQ" secondAttribute="bottom" id="MzK-5c-eWM"/>
+                <constraint firstItem="agO-ay-G7x" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SJx-hn-bVo"/>
+                <constraint firstAttribute="trailing" secondItem="agO-ay-G7x" secondAttribute="trailing" id="SW4-H4-Cgd"/>
+                <constraint firstItem="agO-ay-G7x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="beA-2e-rXO"/>
+                <constraint firstAttribute="trailing" secondItem="jNz-Sj-LbQ" secondAttribute="trailing" id="w01-SF-XKi"/>
+                <constraint firstItem="jNz-Sj-LbQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wxk-Vf-Xhs"/>
+            </constraints>
+            <size key="customSize" width="265" height="191"/>
+            <connections>
+                <outlet property="bgImageView" destination="jNz-Sj-LbQ" id="RdQ-9Q-1Uh"/>
+                <outlet property="contentLabel" destination="agO-ay-G7x" id="aPA-B6-g5x"/>
+            </connections>
+            <point key="canvasLocation" x="151.5" y="-16.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

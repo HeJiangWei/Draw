@@ -1,0 +1,166 @@
+//
+//  PcskHeader.pch
+//  
+//
+//  Created by 江伟 on 2017/8/25.
+//
+//
+
+#ifndef PcskHeader_pch
+#define PcskHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+//---------------------第三方库头文件--------------------------
+
+//#import "SDAutoLayout.h"                // 约束
+//#import "AFNetworking.h"                // 网络请求
+//#import "MJExtension.h"                 // 数据解析
+//#import "MBProgressHUD+HM.h"            // 提示消息
+//#import "APIHttpMacro.h"
+//#import "HttpNetwork.h"
+//#import "JXTAlertManagerHeader.h"
+//#import "ScoreModel.h"
+//#import "AppDelegate.h"
+//#import "ZJScrollPageView.h"
+//#import "JHChartHeader.h"
+//#import "UserInfoModel.h"
+//#import "MJRefresh.h"
+////---------------------第三方库头文件--------------------------
+//
+//#import "APIHttpMacro.h"            // API文件
+//#import "DimensMacros.h"            // 获取尺寸
+//#import "PathMacro.h"               // 沙盒路径
+#import "AppDelegate.h"
+
+
+
+
+
+/**
+ *  打印日志
+ */
+#ifdef DEBUG
+#define TLLOG(format,...)	\
+do{	\
+fprintf(stderr, "<%s : %d> %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__);	\
+(NSLog)((format), ##__VA_ARGS__);	\
+fprintf(stderr, "-----------------\n");	\
+} while(0);
+#else
+#define TLLOG(...)
+#endif
+
+/**
+ *  获取当前屏幕的宽度和高度
+ */
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)              // 屏幕宽度
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)            // 屏幕高度
+
+
+
+// rgb颜色转换（16进制->10进制）
+#define UIColorWithRGB16Radix(rgbValue) ([UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0])
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//----------------------颜色类---------------------------
+
+
+#define UIColorWithRGB(r,g,b) (UIColorWithRGBA(r,g,b,1.0f))
+
+
+// 获取RGB颜色
+#define UIColorWithRGBA(r,g,b,a) ([UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a])
+//清除颜色
+#define UIColorWithNULL ([UIColor clearColor])
+
+//定义UIImage对象
+#define UIImageWithName(name) ([UIImage imageNamed:name])
+
+
+
+#define UIFontWithSize(size) ([UIFont systemFontOfSize:size])               // 正常字体大小
+#define UIBoldFontWithSize(size) ([UIFont boldSystemFontOfSize:size])       // 加粗字体
+
+
+
+
+
+#define KAppDelegate ((AppDelegate*) [[UIApplication sharedApplication] delegate])
+#define ThisWeak(weakSelf)  __weak __typeof(&*self)weakSelf = self
+
+
+//清除颜色
+#define UIColorWithNULL ([UIColor clearColor])
+
+
+#define RED_COLOR               (UIColorWithRGB16Radix(0XF23030))      // 红色 -- 导航栏颜色
+
+#define PRICE_RED_COLOR         (UIColorWithRGB16Radix(0XEF0505))      // 红色 -- 价格标签颜色
+
+#define BACKGROUND_COLOR        (UIColorWithRGB16Radix(0XF3F3F3))      //背景色
+#define WHITE_COLOR             (UIColorWithRGB16Radix(0XFFFFFF))      // 白色
+#define LINE_COLOR              (UIColorWithRGB16Radix(0XE1E1E1))      // 分割线颜色
+
+#define LINE_SHALLOW_COLOR      (UIColorWithRGB16Radix(0XF2F4F6))      // 分割线较浅颜色
+#define TEXT_COLOR              (UIColorWithRGB16Radix(0X9a9b9a))      // 字体颜色
+#define PLACEHOLDER_TEXT_COLOR  (UIColorWithRGB16Radix(0XCCCCCC))      // 占位字体颜色颜色
+
+#define GREEN_COLOR             (UIColorWithRGB16Radix(0X3DBD87))      // 绿色
+#define BLUE_COLOR              UIColorWithRGB(54, 158, 243)      // 蓝色
+
+#define SUBTITLE_TEXT_COLOR     (UIColorWithRGB16Radix(0X81838D))      // 子标题字体颜色
+
+
+#define Tab_Text_Color     (UIColorWithRGB16Radix(0X39e5ac))      // 子标题字体颜色
+#define Tab_Text_Unseleted_Color     (UIColorWithRGB16Radix(0Xc6cacf))      // 子标题字体颜色
+#define left_Color     (UIColorWithRGB16Radix(0X1dc6e7))      // 左边渐变颜色
+#define right_Color     (UIColorWithRGB16Radix(0X1de9b6))      // 右边渐变颜色
+#define UNSelected_Color     (UIColorWithRGB16Radix(0Xd8d6d6))      // 未选中颜色
+
+#define TOP_Color              UIColorWithRGB(126, 50, 0)      // 猪肝色
+
+
+//---------------------iOS 11--------------------------
+
+#define isIOS11 [[UIDevice currentDevice].systemVersion floatValue] >= 11
+
+#define IS_IPHONE_X (fabs((double)[[UIScreen mainScreen] bounds].size.height - (double )812) < DBL_EPSILON )
+// 导航栏高度
+#define Navigation_Height  (IS_IPHONE_X?75:64)
+// 标签栏高度
+#define TabBar_Height (IS_IPHONE_X?83:49)
+// 电池栏现在相当于是31了，和以前差距11
+#define StatusBarDistance_Height (IS_IPHONE_X?11:0)
+//
+#define Bottom_Height (IS_IPHONE_X?31:0)
+/**
+ 导航栏titleView尽可能充满屏幕，余留的边距
+ iPhone5s/iPhone6(iOS8/iOS9/iOS10) margin = 8
+ iPhone6p(iOS8/iOS9/iOS10) margin = 12
+ 
+ iPhone5s/iPhone6(iOS11) margin = 16
+ iPhone6p(iOS11) margin = 20
+ */
+#define NavigationBarTitleViewMargin \
+(isIOS11? ([UIScreen mainScreen].bounds.size.width > 375 ? 20 : 16) : \
+([UIScreen mainScreen].bounds.size.width > 375 ? 12 : 8))
+
+/**
+ 导航栏左右navigationBarItem余留的边距
+ iPhone5s/iPhone6(iOS8/iOS9/iOS10) margin = 16
+ iPhone6p(iOS8/iOS9/iOS10) margin = 20
+ */
+#define NavigationBarItemMargin ([UIScreen mainScreen].bounds.size.width > 375 ? 20 : 16)
+
+/**
+ 导航栏titleView和navigationBarItem之间的间距
+ iPhone5s/iPhone6/iPhone6p(iOS8/iOS9/iOS10) iterItemSpace = 6
+ */
+#define NavigationBarInterItemSpace 6
+
+
+#endif /* PcskHeader_pch */
