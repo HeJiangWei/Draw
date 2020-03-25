@@ -1,16 +1,14 @@
-# Task Helper  - Efficient
+# Task Helper 
 
-Task Helper  - Efficient
+If you want to make your work more organized, this software is your best choice
 
-Function is introduced
+1. New work tasks, so that you can complete the work in the order you set, which can also set the cycle or not.
 
-1. Create new tasks in the simplest way possible
+2. Check your work history
 
-2. Finish the tasks on time
+3. When adding work tasks, you can choose representative pictures to make your work content clear at a glance.
 
-3. Click to complete the task
-
-4. Add new tasks
+Welcome to download!
 
 Advantages of this app:
 
