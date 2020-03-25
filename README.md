@@ -17,3 +17,6 @@ Advantages of this app:
 2, clear conditioning, clear record every task, will not forget
 
 3, Page meguiar's
+
+If you have any questions, you can contact github himself or add my personal email address dx1i4z@163.com
+
